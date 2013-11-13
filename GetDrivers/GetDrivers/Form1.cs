@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace GetDrivers
 {
@@ -111,7 +112,20 @@ namespace GetDrivers
 
         private void printBtn_Click(object sender, EventArgs e)
         {
-            
+            ProcessStartInfo psi = new ProcessStartInfo(@"print.docx")
+            {
+                UseShellExecute = true,
+                Verb = "print",
+                RedirectStandardOutput = false,
+                CreateNoWindow = false,
+                WindowStyle = ProcessWindowStyle.Hidden
+            };
+
+            using (Process p = new Process { StartInfo = psi })
+            {
+                p.Start();
+                p.WaitForExit();
+            }
         }
     }
 }
