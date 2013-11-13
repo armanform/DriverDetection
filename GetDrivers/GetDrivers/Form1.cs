@@ -127,5 +127,10 @@ namespace GetDrivers
                 p.WaitForExit();
             }
         }
+
+        private void openBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
