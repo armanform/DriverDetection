@@ -9,6 +9,10 @@ namespace GetDrivers
 {
     class FilesInDrive
     {
+
+        /*
+         * Get collection of files in the specified folder
+         */ 
         public static Drive[] getCollection(String driveName)
         {
 
@@ -28,6 +32,10 @@ namespace GetDrivers
             return driveCol;
         }
 
+
+        /*
+         * Get collection of directories in the specified folder
+         */ 
         public static String[] getDirectories(String path)
         {
             DirectoryInfo dirInfo = new DirectoryInfo(@path);

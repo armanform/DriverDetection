@@ -10,3 +10,9 @@ c:\users\arman_000\documents\visual studio 2012\Projects\GetDrivers\GetDrivers\o
 C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\bin\Debug\GetDrivers.exe.config
 C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\obj\Debug\GetDrivers.exe
 C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\obj\Debug\GetDrivers.pdb
+C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\bin\Debug\GetDrivers.exe
+C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\bin\Debug\GetDrivers.pdb
+C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\obj\Debug\GetDrivers.csprojResolveAssemblyReference.cache
+C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\obj\Debug\GetDrivers.Form1.resources
+C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\obj\Debug\GetDrivers.Properties.Resources.resources
+C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\obj\Debug\GetDrivers.csproj.GenerateResource.Cache

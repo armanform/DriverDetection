@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace GetDrivers
 {
+    /*
+        * Class which contains information about
+        * specific file 
+    */ 
     class Drive
     {
         private String _driveName;

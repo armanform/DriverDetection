@@ -16,12 +16,6 @@ namespace GetDrivers
 {
     public partial class Form1 : Form
     {
-        public Form1()
-        {
-
-            InitializeComponent();
-        }
-
         // device state change
         private const int WM_DEVICECHANGE = 0x0219;
 
@@ -36,6 +30,27 @@ namespace GetDrivers
 
         // removed
         private const int DBT_DEVICEREMOVECOMPLETE = 0x8004;
+
+        //path for open directories
+        private static String openPath = null;
+
+        //holds paths in a specific dynamic array
+        private static List<String> lastDir;
+
+        //index for next-prev manipulation
+        private static int LIndex;
+
+        public Form1()
+        {
+            InitializeComponent();
+            lastDir = new List<String>();
+            LIndex = 0;
+        }
+
+        /*
+         * Function interacts with OS, and retrieve information
+         * about new inserted usb device
+         */ 
         protected override void WndProc(ref Message message)
         {
             base.WndProc(ref message);
@@ -54,6 +69,7 @@ namespace GetDrivers
                         string driveName = ToDriveName(volume.dbcv_unitmask);
                         MessageBox.Show(
                         string.Format("A storage device has been inserted; Drive :{0}", driveName), "Detect USB");
+                        openPath = driveName;
                         showFiles(driveName);
                         break;
 
@@ -70,6 +86,9 @@ namespace GetDrivers
         {
             Drive[] drivers = FilesInDrive.getCollection(path);
             String[] directories = FilesInDrive.getDirectories(path);
+            
+            //refresh items in listbox
+            listBox1.Items.Clear();
 
             foreach (String s in directories)
             {
@@ -110,6 +129,10 @@ namespace GetDrivers
             public int dbcv_unitmask;
         }
 
+
+        /* 
+         * print the particular doc file named 'print.docx'
+         */
         private void printBtn_Click(object sender, EventArgs e)
         {
             ProcessStartInfo psi = new ProcessStartInfo(@"print.docx")
@@ -128,9 +151,47 @@ namespace GetDrivers
             }
         }
 
+        /* 
+         * event handler for open the directory
+         * open the chosen folder from list
+         */
         private void openBtn_Click(object sender, EventArgs e)
         {
+            if(LIndex >= lastDir.Count) lastDir.Add(openPath);
+            LIndex++;
+            openPath += "/";
+            try
+            {
+                openPath += (String)listBox1.SelectedItem;
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show("Error");
+            }
+            try
+            {
+                showFiles(@openPath);
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+                LIndex--;
+                openPath = lastDir[LIndex];
+            }
 
+        }
+
+        /* 
+         * event handler for go back to the previous directory
+         */
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            if (LIndex > 0)
+            {
+                LIndex--;
+                openPath = lastDir[LIndex];
+                showFiles(@openPath);
+            }
         }
     }
 }

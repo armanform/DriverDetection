@@ -31,6 +31,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.printBtn = new System.Windows.Forms.Button();
             this.openBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -61,11 +62,22 @@
             this.openBtn.UseVisualStyleBackColor = true;
             this.openBtn.Click += new System.EventHandler(this.openBtn_Click);
             // 
+            // backBtn
+            // 
+            this.backBtn.Location = new System.Drawing.Point(97, 334);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(75, 23);
+            this.backBtn.TabIndex = 3;
+            this.backBtn.Text = "back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 383);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.openBtn);
             this.Controls.Add(this.printBtn);
             this.Controls.Add(this.listBox1);
@@ -80,6 +92,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button printBtn;
         private System.Windows.Forms.Button openBtn;
+        private System.Windows.Forms.Button backBtn;
     }
 }
 
