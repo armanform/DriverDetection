@@ -80,11 +80,13 @@ namespace GetDrivers
                 }
             }
         }
-        
+
+        private static Drive[] drivers = null;
+
         //show all files in the drive in the listbox
         void showFiles(String path)
         {
-            Drive[] drivers = FilesInDrive.getCollection(path);
+            drivers = FilesInDrive.getCollection(path);
             String[] directories = FilesInDrive.getDirectories(path);
             
             //refresh items in listbox
@@ -95,7 +97,7 @@ namespace GetDrivers
                 listBox1.Items.Add(s);
             }
 
-            listBox1.Items.Add("-----------");
+            listBox1.Items.Add("--------------");
 
             foreach (Drive dr in drivers)
             {
@@ -164,7 +166,7 @@ namespace GetDrivers
             {
                 openPath += (String)listBox1.SelectedItem;
             }
-            catch(Exception exc)
+            catch
             {
                 MessageBox.Show("Error");
             }
@@ -192,6 +194,16 @@ namespace GetDrivers
                 openPath = lastDir[LIndex];
                 showFiles(@openPath);
             }
+        }
+
+        private void SendSocket_Click(object sender, EventArgs e)
+        {
+            FilesInDrive.sendBySocket(drivers, (String)listBox1.SelectedItem);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

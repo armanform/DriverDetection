@@ -16,3 +16,6 @@ C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\obj\Debug\GetDr
 C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\obj\Debug\GetDrivers.Form1.resources
 C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\obj\Debug\GetDrivers.Properties.Resources.resources
 C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\obj\Debug\GetDrivers.csproj.GenerateResource.Cache
+C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\bin\Debug\Newtonsoft.Json.dll
+C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\arman_000\Desktop\DriverDetection\GetDrivers\GetDrivers\bin\Debug\Newtonsoft.Json.xml

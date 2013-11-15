@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
+using Newtonsoft.Json;
+using System.Net.Sockets;
+using System.Threading;
+
 namespace GetDrivers
 {
     class FilesInDrive
@@ -52,6 +56,30 @@ namespace GetDrivers
             }
             
             return directories;
+        }
+
+        public static void sendBySocket(Drive[] drivers, String fileName)
+        {
+            Drive a = null;
+            for (int i = 0; i < drivers.Length; i++)
+            {
+                if (drivers[i].DriveName == fileName) a = drivers[i];
+            }
+            string json = JsonConvert.SerializeObject(a, Formatting.Indented);
+
+            //Console.WriteLine("Client started");
+            int port = 8000;
+            TcpClient client = new TcpClient("127.0.0.1", port);
+            Stream str = client.GetStream();
+            //Console.WriteLine("Client connected.");
+            StreamReader reader = new StreamReader(str);
+            StreamWriter writer = new StreamWriter(str);
+            writer.AutoFlush = true;
+            writer.WriteLine(json);
+
+            str.Close();
+            client.Close();
+
         }
     }
 }

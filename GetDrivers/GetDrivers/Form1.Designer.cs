@@ -32,6 +32,7 @@
             this.printBtn = new System.Windows.Forms.Button();
             this.openBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
+            this.SendSocket = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -72,17 +73,29 @@
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // SendSocket
+            // 
+            this.SendSocket.Location = new System.Drawing.Point(16, 334);
+            this.SendSocket.Name = "SendSocket";
+            this.SendSocket.Size = new System.Drawing.Size(75, 23);
+            this.SendSocket.TabIndex = 4;
+            this.SendSocket.Text = "Send";
+            this.SendSocket.UseVisualStyleBackColor = true;
+            this.SendSocket.Click += new System.EventHandler(this.SendSocket_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 383);
+            this.Controls.Add(this.SendSocket);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.openBtn);
             this.Controls.Add(this.printBtn);
             this.Controls.Add(this.listBox1);
             this.Name = "Form1";
             this.Text = "Fleshka";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -93,6 +106,7 @@
         private System.Windows.Forms.Button printBtn;
         private System.Windows.Forms.Button openBtn;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Button SendSocket;
     }
 }
 
